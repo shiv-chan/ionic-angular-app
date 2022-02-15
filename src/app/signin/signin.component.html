@@ -1,3 +1,52 @@
-<p>
-  signin works!
-</p>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-avatar>
+          <img
+            src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+          />
+        </ion-avatar>
+        <h1>Sign In</h1>
+        <div class="inputs">
+          <ion-item>
+            <ion-label><ion-icon name="mail-outline"></ion-icon></ion-label>
+            <ion-input type="email" placeholder="Email" #email></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label
+              ><ion-icon name="lock-closed-outline"></ion-icon
+            ></ion-label>
+            <ion-input
+              type="password"
+              placeholder="Password"
+              #password
+            ></ion-input>
+          </ion-item>
+          <a href="/" id="forgot-password-link">forgot password?</a>
+        </div>
+        <div class="third-party-login">
+          <h2>Sign in with</h2>
+          <ion-icon name="logo-facebook"
+            ><a routerLink="/master-list"></a
+          ></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="buttons">
+      <ion-col size="6" class="ion-align-self-start"
+        ><ion-button shape="round" fill="outline">Sign Up</ion-button></ion-col
+      >
+      <ion-col size="6" class="ion-align-self-end"
+        ><ion-button
+          shape="round"
+          routerDirection
+          href="/master-list"
+          (click)="email.value = ''; password.value = ''"
+          >Sign In</ion-button
+        ></ion-col
+      >
+    </ion-row>
+    <a href="/" id="terms-conditions-link">Terms and conditions</a>
+  </ion-grid>
+</ion-content>
