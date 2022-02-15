@@ -1,0 +1,33 @@
+ion-content {
+  --background: lightgrey;
+}
+
+ion-toolbar,
+.top-links {
+  padding: 0 0.5rem;
+}
+
+ion-toolbar {
+  ion-title {
+    text-align: center;
+  }
+
+  ion-icon {
+    transform: rotate(90deg);
+  }
+}
+
+.top-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  ion-button {
+    color: gray;
+  }
+}
+
+ion-grid {
+  max-width: 1000px;
+  padding: 2rem;
+}
