@@ -7,9 +7,10 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SigninComponent } from './signin/signin.component';
+import { MasterListComponent } from './master-list/master-list.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent],
+  declarations: [AppComponent, SigninComponent, MasterListComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
