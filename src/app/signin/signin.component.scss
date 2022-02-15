@@ -22,8 +22,13 @@ ion-avatar {
   width: 80%;
   margin: 2rem auto;
 
+  ion-icon {
+    color: gray;
+  }
+
   ion-input {
     --background: white;
+    --placeholder-color: black;
     text-align: left;
     margin-bottom: 0.2rem;
   }
@@ -33,6 +38,8 @@ ion-avatar {
     position: absolute;
     right: 0;
     margin: 0.5rem 1rem;
+    color: grey;
+    text-decoration: none;
   }
 }
 
