@@ -1,6 +1,10 @@
 ion-content {
   position: relative;
   --background: lightgrey;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 ion-toolbar,

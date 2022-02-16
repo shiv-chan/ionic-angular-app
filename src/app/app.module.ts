@@ -9,9 +9,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SigninComponent } from './signin/signin.component';
 import { MasterListComponent } from './master-list/master-list.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, MasterListComponent],
+  declarations: [
+    AppComponent,
+    SigninComponent,
+    MasterListComponent,
+    ToolbarComponent,
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,

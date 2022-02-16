@@ -1,0 +1,13 @@
+ion-toolbar {
+  padding: 0 0.5rem;
+}
+
+ion-toolbar {
+  ion-title {
+    text-align: center;
+  }
+
+  ion-icon {
+    transform: rotate(90deg);
+  }
+}
