@@ -31,7 +31,7 @@ export class PicturesService {
         error.error
       );
     }
-    return throwError('Something bad happened; please try again later.');
+    return throwError('Something bad happened...please try again later.');
   }
 
   getImages(): Observable<any> {
