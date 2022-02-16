@@ -1,0 +1,58 @@
+ion-content {
+  position: relative;
+  --background: lightgrey;
+}
+
+ion-toolbar,
+.top-links {
+  padding: 0 0.5rem;
+}
+
+ion-toolbar {
+  ion-title {
+    text-align: center;
+  }
+
+  ion-icon {
+    transform: rotate(90deg);
+  }
+}
+
+.top-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  ion-button {
+    color: gray;
+  }
+}
+
+ion-grid {
+  max-width: 1000px;
+  padding: 2rem;
+
+  .message {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+ion-card {
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  ion-card-header,
+  ion-card-content {
+    padding: 2rem;
+  }
+
+  ion-card-header {
+    padding-bottom: 0;
+  }
+}
