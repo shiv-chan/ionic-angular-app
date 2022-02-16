@@ -1,0 +1,39 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-buttons slot="primary">
+    <ion-button>
+      <ion-icon slot="icon-only" name="options-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-title>LOGO</ion-title>
+</ion-toolbar>
+
+<div class="top-links">
+  <ion-button fill="clear"> Missions </ion-button>
+  <ion-button fill="clear"> Notes </ion-button>
+  <ion-button fill="clear"> Request </ion-button>
+</div>
+
+<ion-content>
+  <ion-grid>
+    <p class="message" *ngIf="!pictures.length && !errorMessage">Loading...</p>
+    <p class="message" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <ion-row *ngFor="let picture of pictures">
+      <ion-col>
+        <ion-card button>
+          <img src="{{ picture.url }}" alt="{{ picture.title }}" />
+          <ion-card-header>
+            <ion-card-title>{{ picture.title }}</ion-card-title>
+            <ion-card-subtitle>{{ picture.date }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{ picture.explanation }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
