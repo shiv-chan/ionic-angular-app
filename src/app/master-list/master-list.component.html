@@ -19,6 +19,8 @@
 
 <ion-content>
   <ion-grid>
+    <p class="message" *ngIf="!pictures.length && !errorMessage">Loading...</p>
+    <p class="message" *ngIf="errorMessage">{{ errorMessage }}</p>
     <ion-row *ngFor="let picture of pictures">
       <ion-col>
         <ion-card button>
