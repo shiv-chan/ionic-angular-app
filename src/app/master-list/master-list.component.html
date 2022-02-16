@@ -19,38 +19,16 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row *ngFor="let picture of pictures">
       <ion-col>
         <ion-card button>
-          <img
-            src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
-          />
+          <img src="{{ picture.url }}" alt="{{ picture.title }}" />
           <ion-card-header>
-            <ion-card-title>Destination</ion-card-title>
+            <ion-card-title>{{ picture.title }}</ion-card-title>
+            <ion-card-subtitle>{{ picture.date }}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
-            Madison was named the capital of the Wisconsin Territory in 1836.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-card button>
-          <img
-            src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
-          />
-          <ion-card-header>
-            <ion-card-title>Destination</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
-            Madison was named the capital of the Wisconsin Territory in 1836.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            adipisci, commodi deleniti fugit esse expedita? Veniam amet magni
-            dignissimos debitis at. Recusandae sapiente quaerat quis soluta
-            esse, reprehenderit omnis nam.
+            {{ picture.explanation }}
           </ion-card-content>
         </ion-card>
       </ion-col>

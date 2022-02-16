@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pictures } from '../pictures';
+import { PicturesService } from '../pictures.service';
 
 @Component({
   selector: 'app-master-list',
@@ -6,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./master-list.component.scss'],
 })
 export class MasterListComponent implements OnInit {
+  pictures: Pictures[] = [];
+  errorMessage: string;
 
-  constructor() { }
+  constructor(private pictureService: PicturesService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getPictures();
+  }
 
+  getPictures(): void {
+    this.pictureService.getImages().subscribe(
+      (pictures) => {
+        this.pictures = pictures;
+        console.log(pictures);
+      },
+      (err) => (this.errorMessage = err)
+    );
+  }
 }

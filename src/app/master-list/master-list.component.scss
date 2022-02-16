@@ -31,3 +31,19 @@ ion-grid {
   max-width: 1000px;
   padding: 2rem;
 }
+
+ion-card {
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  ion-card-header,
+  ion-card-content {
+    padding: 2rem;
+  }
+
+  ion-card-header {
+    padding-bottom: 0;
+  }
+}
