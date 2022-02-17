@@ -1,0 +1,28 @@
+<ion-menu side="start" menuId="menu" contentId="content">
+  <ion-content>
+    <ion-menu-toggle auto-hide="true">
+      <ion-avatar>
+        <img
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+        />
+      </ion-avatar>
+      <div class="menu-items">
+        <ion-list *ngFor="let item of menuItems">
+          <ion-item
+            button
+            lines="none"
+            routerDirection
+            href="{{ item.url }}"
+            disabled="{{ item.disabled }}"
+          >
+            <ion-icon name="image-outline" slot="start"></ion-icon>
+            <ion-label
+              ><h3>{{ item.title }}</h3></ion-label
+            >
+          </ion-item>
+        </ion-list>
+      </div>
+      <ion-icon name="power-outline"></ion-icon>
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>

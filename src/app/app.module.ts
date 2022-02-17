@@ -11,6 +11,7 @@ import { SigninComponent } from './signin/signin.component';
 import { MasterListComponent } from './master-list/master-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DetailComponent } from './detail/detail.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DetailComponent } from './detail/detail.component';
     MasterListComponent,
     ToolbarComponent,
     DetailComponent,
+    MenuComponent,
   ],
   entryComponents: [],
   imports: [
