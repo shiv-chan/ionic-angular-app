@@ -1,0 +1,26 @@
+ion-button {
+  width: fit-content;
+  color: gray;
+}
+
+ion-content {
+  position: relative;
+  --background: lightgrey;
+}
+
+ion-grid {
+  max-width: 1000px;
+  padding: 2rem;
+
+  ion-row:not(:first-of-type) {
+    padding: 0 2rem;
+  }
+
+  .content {
+    line-height: 2rem;
+  }
+
+  #copyright {
+    color: gray;
+  }
+}

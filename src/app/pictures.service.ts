@@ -8,7 +8,7 @@ import {
 } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import moment from 'moment';
-import { Pictures } from './pictures';
+import { Picture } from './picture';
 
 @Injectable({
   providedIn: 'root',
@@ -16,11 +16,10 @@ import { Pictures } from './pictures';
 export class PicturesService {
   constructor(private http: HttpClient) {}
 
-  // get all picture of 30 days prior today
   private startDate = moment().subtract(30, 'days').format('YYYY-MM-DD');
   private endDate = moment().format('YYYY-MM-DD');
   // eslint-disable-next-line max-len
-  private picturesUrl = `https://api.nasa.gov/planetary/apod?api_key=${environment.apiKey}&start_date=${this.startDate}&end_date=${this.endDate}`;
+  private picturesUrl = `https://api.nasa.gov/planetary/apod?api_key=${environment.apiKey}`;
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
@@ -34,9 +33,15 @@ export class PicturesService {
     return throwError('Something bad happened...please try again later.');
   }
 
-  getImages(): Observable<any> {
-    return this.http
-      .get<Pictures>(this.picturesUrl)
-      .pipe(catchError(this.handleError));
+  // get all picture of 30 days prior today
+  getImages(): Observable<Picture[]> {
+    const url = `${this.picturesUrl}&start_date=${this.startDate}&end_date=${this.endDate}`;
+    return this.http.get<Picture[]>(url).pipe(catchError(this.handleError));
+  }
+
+  // get a picture of the day
+  getImage(date: string): Observable<Picture> {
+    const url = `${this.picturesUrl}&date=${date}`;
+    return this.http.get<Picture>(url).pipe(catchError(this.handleError));
   }
 }

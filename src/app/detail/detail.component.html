@@ -1,0 +1,31 @@
+<app-toolbar></app-toolbar>
+<ion-button fill="clear" (click)="goBack()"
+  ><ion-icon slot="start" name="arrow-undo-outline"></ion-icon> Back to List
+</ion-button>
+<ion-content *ngIf="picture">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="{{ picture.url }}" alt="{{ picture.title }}" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1>{{ picture.title }}</h1>
+        <p>{{ picture.date }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="content">
+        <p>{{ picture.explanation }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <span id="copyright" *ngIf="picture.copyright"
+          >&copy;{{ picture.copyright }}</span
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

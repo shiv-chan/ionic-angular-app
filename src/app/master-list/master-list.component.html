@@ -12,7 +12,7 @@
     <p class="message" *ngIf="errorMessage">{{ errorMessage }}</p>
     <ion-row *ngFor="let picture of pictures">
       <ion-col>
-        <ion-card button>
+        <ion-card button routerDirection href="/detail/{{ picture.date }}">
           <img src="{{ picture.url }}" alt="{{ picture.title }}" />
           <ion-card-header>
             <ion-card-title>{{ picture.title }}</ion-card-title>
