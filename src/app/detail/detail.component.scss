@@ -9,11 +9,22 @@ ion-content {
 }
 
 ion-grid {
-  max-width: 1000px;
-  padding: 2rem;
+  max-width: 1200px;
+  padding: 2rem 0;
+
+  ion-row:first-of-type {
+    ion-col {
+      padding: 0;
+    }
+  }
 
   ion-row:not(:first-of-type) {
     padding: 0 2rem;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
   }
 
   .content {
