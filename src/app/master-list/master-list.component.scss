@@ -1,6 +1,10 @@
 ion-content {
   position: relative;
   --background: lightgrey;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 ion-toolbar,
@@ -42,6 +46,8 @@ ion-grid {
 }
 
 ion-card {
+  position: relative;
+
   img {
     object-fit: cover;
     width: 100%;

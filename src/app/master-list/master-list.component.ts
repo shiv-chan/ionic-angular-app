@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pictures } from '../pictures';
+import { Picture } from '../picture';
 import { PicturesService } from '../pictures.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { PicturesService } from '../pictures.service';
   styleUrls: ['./master-list.component.scss'],
 })
 export class MasterListComponent implements OnInit {
-  pictures: Pictures[] = [];
+  pictures: Picture[] = [];
   errorMessage: string;
 
   constructor(private pictureService: PicturesService) {}
@@ -20,6 +20,13 @@ export class MasterListComponent implements OnInit {
   getPictures(): void {
     this.pictureService.getImages().subscribe(
       (pictures) => {
+        pictures.sort((a, b) => {
+          if (b.date - a.date) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
         this.pictures = pictures;
         console.log(pictures);
       },

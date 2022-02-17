@@ -1,4 +1,4 @@
-export interface Pictures {
+export interface Picture {
   date: any;
   explanation: string;
   hdurl: string;
@@ -8,4 +8,5 @@ export interface Pictures {
   service_version: any;
   title: string;
   url: string;
+  copyright: string;
 }
