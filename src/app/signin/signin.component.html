@@ -8,10 +8,35 @@
           />
         </ion-avatar>
         <h1>Sign In</h1>
-        <div class="inputs">
+        <form [formGroup]="signinForm">
+          <small
+            class="validation-message"
+            *ngIf="email.value === '' || password.value === ''"
+            >Email and password are required.</small
+          >
+          <small
+            class="validation-message"
+            *ngIf="
+              signinForm.get('email').invalid && signinForm.get('email').touched
+            "
+            >Email is not invalid.</small
+          >
+          <small
+            class="validation-message"
+            *ngIf="
+              signinForm.get('password').invalid &&
+              signinForm.get('password').touched
+            "
+            >Password must be at least 4 characters long.</small
+          >
           <ion-item>
             <ion-label><ion-icon name="mail-outline"></ion-icon></ion-label>
-            <ion-input type="email" placeholder="Email" #email></ion-input>
+            <ion-input
+              type="text"
+              placeholder="Email"
+              #email
+              formControlName="email"
+            ></ion-input>
           </ion-item>
           <ion-item>
             <ion-label
@@ -21,10 +46,11 @@
               type="password"
               placeholder="Password"
               #password
+              formControlName="password"
             ></ion-input>
           </ion-item>
           <a href="/" id="forgot-password-link">forgot password?</a>
-        </div>
+        </form>
         <div class="third-party-login">
           <h2>Sign in with</h2>
           <ion-router-link routerDirection href="/master-list"
@@ -42,7 +68,7 @@
           shape="round"
           routerDirection
           href="/master-list"
-          (click)="email.value = ''; password.value = ''"
+          [disabled]="signinForm.invalid"
           >Sign In</ion-button
         ></ion-col
       >
